@@ -7,7 +7,7 @@ const App = () => {
   const [task, setTask] = useState('');
 
   const getTodos = async () => {
-    const res = await axios.get('http://35.154.224.20:3001/todos');
+    const res = await axios.get('https://35.154.224.20:3001/todos');
     setTodos(res.data);
   };
 
@@ -16,7 +16,7 @@ const App = () => {
   }, []);
 
   const addTodo = async () => {
-    await axios.post('http://35.154.224.20:3001/todos', { task });
+    await axios.post('https://35.154.224.20:3001/todos', { task });
     getTodos();
     setTask('');
   };
